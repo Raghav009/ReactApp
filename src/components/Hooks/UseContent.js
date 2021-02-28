@@ -1,8 +1,18 @@
 import React, { createContext, useContext, useState } from 'react';
 // Example How the Props Work !
-const UserContext = createContext()
+const UserContext = createContext() 
 
-const Content = () => {
+/*
+    < value="{name:Fred}">  <! parent -->
+        <div> <!  Child--> 
+            <h1>Welcome,Fred!</h1> <! Grand Child-->
+            <br />
+            <div>Main app content</div>
+        </div>
+    </>
+*/
+
+const Context = () => {
     const [user] = useState({ name: "Fred" });
     return (
         <UserContext.Provider value={user}>
@@ -24,4 +34,4 @@ const Header = () => {
     return <h1>Welcome,{user.name}!</h1>;
 }
 
-export default Content;
+export default Context;
