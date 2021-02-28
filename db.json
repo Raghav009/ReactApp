@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "author": "Test ",
+      "title": "Time",
+      "id": 1
+    }
+  ],
+  "comments": [
+    "Good",
+    "Bad",
+    "Ügly"
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

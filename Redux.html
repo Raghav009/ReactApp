@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Redux Example</title>
+    <meta charset="utf-8" />  
+  </head>
+  <body>
+    <input id="todo" type="text" />
+    <button id="submit-todo">submit</button>
+    <div id="container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.min.js" integrity="sha512-P36ourTueX/PrXrD4Auc1kVLoTE7bkWrIrkaM0IG2X3Fd90LFgTRogpZzNBssay0XOXhrIgudf4wFeftdsPDiQ==" crossorigin="anonymous"></script>
+    <script type="text/Javascript">
+    const reducer = Redux.combineReducers({
+          todos: (state = [], action) => {
+              const newState = Object.assign([], state);
+              if (action.type == 'add') {
+                  newState.push(action.item);
+              }
+              if (action.type == 'remove') {
+                  newState.splice(action.index, 1);
+              }
+              return newState;
+          }
+      });
+
+      const store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+      const render = () => {
+          const container = document.getElementById('container');
+          container.innerHTML = '';
+          const state = store.getState();
+          state.todos.forEach((todo, i) => {
+              const e = document.createElement('div');
+              e.innerHTML = todo;
+              container.appendChild(e);
+              e.onclick = () => {
+                  store.dispatch({
+                      type: 'remove',
+                      index: i
+                  });
+                  render();
+              }
+          });
+      };
+
+      document.getElementById('submit-todo').onclick = () => {
+          store.dispatch({
+              type: 'add',
+              item: document.getElementById('todo').value
+          });
+          render();
+      };
+      // https://www.youtube.com/watch?v=oD3miHerQbY
+    </script>
+  </body>
+</html>
+
+
