@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 // Example How the Props Work !
-const UserContext = createContext() 
+const UserContext = createContext();
 
 /*
     < value="{name:Fred}">  <! parent -->
@@ -14,12 +14,13 @@ const UserContext = createContext()
 
 const Context = () => {
     const [user] = useState({ name: "Fred" });
+
     return (
         <UserContext.Provider value={user}>
             <Main />
         </UserContext.Provider>
     );
-}
+};
 const Main = () => {
     return (
         <div>
@@ -27,11 +28,25 @@ const Main = () => {
             <br />
             <div>Main app content</div>
         </div>
-    )
-}
+    );
+};
+
+const Log = (value) => {
+    console.log(value);
+    return null;
+};
+
 const Header = () => {
-    const user = useContext(UserContext)
-    return <h1>Welcome,{user.name}!</h1>;
-}
+    const user = useContext(UserContext);
+    return (
+        <h1>
+            Welcome,
+            <UserContext.Consumer>
+                { user => (<div>{user.name} From Consumer</div> )}
+            </UserContext.Consumer>
+            {user.name}!
+        </h1>
+    );
+};
 
 export default Context;

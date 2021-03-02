@@ -22,6 +22,8 @@ const Event = () => {
 
                 <Comp1 click={Click} />
 
+                <Comp1 />
+
                 <Comp1 name={label} toggle={Display} />
             </div>
         </div>
@@ -44,7 +46,7 @@ const Comp1 = ({ name, click, toggle }) => {
     )
 }
 
-const Comp2 = ({ text, display }) => {
+const Comp2 = ({ text = 'Sample', display }) => {
 
     return (
         <>
@@ -61,7 +63,10 @@ Comp1.propTypes = {
 }
 
 Comp1.defaultProps = {
-    name: 'Comp1'
+    name: 'Comp1', 
+    click : function(){
+        console.log('Click method is not passed')
+    }
 }
 
 Comp1.propTypes = {

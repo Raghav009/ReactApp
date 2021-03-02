@@ -89,10 +89,10 @@ const Rest = () => {
             Rest Example
             <div>
                 Author :
-                <input type="text" value={Author} onChange={(e) => OnChange(e, 1)} />
+                <input type="text" value={Author} onChange={(e) => setAuthor(e.target.value)} />
 
                 Title :
-                <input type="text" value={Title} onChange={(e) => OnChange(e, 2)} />
+                <input type="text" value={Title} onChange={(e) => setTitle(e.target.value)} />
 
                 <button onClick={Savepost}> {saveLabel} </button>
             </div>
@@ -113,7 +113,7 @@ const Rest = () => {
             </div>
 
             <div>
-                <select onChange={(e)=> OnChange(e,3)}>
+                <select onChange={(e)=> setId(e.target.value)}>
                     <option value="">Select</option>
                     {
                         posts.map(e => <option key={e.id} value={e.id}>{e.id}</option>)
