@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 
 const Question = () => {
+
+    const { name } = useParams();
 
     const [count, setCount] = useState('Init');
 
@@ -37,9 +40,10 @@ const Question = () => {
     }
 
     useEffect(() => {
-        setTimeout(() => {
+        const id = setTimeout(() => {
             setloading(false);
         }, 2000)
+        return () => clearInterval(id)
     }, [])
 
     useEffect(() => {
@@ -59,6 +63,8 @@ const Question = () => {
         return (
 
             <div className="row">
+                Name : {name}
+
                 <button onClick={OnHandle}>{count}</button>
 
                 <button onClick={onNew}>New</button>
@@ -81,7 +87,11 @@ const Question = () => {
     return (
         <div>
             Question Component {loading == false ? display() : 'Loading..'}
-
+            <div>
+                <Link to="/multi/Comp1" className="nav-link">Component 1</Link>
+                <Link to="/multi/Comp2" className="nav-link">Component 2</Link>
+                <Link to="/multi" className="nav-link">Multi Component</Link>
+            </div>
         </div>
     )
 }

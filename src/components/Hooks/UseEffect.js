@@ -13,7 +13,7 @@ const UseEffectC = () => {
     }, [count])
 
     useEffect(() => {
-        axios.get(commentURL + '/' + count).then(r => {
+        count > 0 && axios.get(commentURL + '/' + count).then(r => {
             console.log(r.data);
             setResponse(r.data)
         }).catch(e => console.error(e))

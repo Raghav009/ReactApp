@@ -35,6 +35,7 @@ const HoC2 = () => {
         .then((repos) => {
             setData({ loading: false, repos: repos });
         });
+        
     }, [])
 
     return (
