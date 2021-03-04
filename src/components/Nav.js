@@ -27,6 +27,9 @@ const Nav = () => {
           <li className="navbar-item">
             <Link to="/redux2" exact="true" className="nav-link">Redux 2</Link>
           </li>
+          <li className="navbar-item">
+            <Link to="/questions" exact="true" className="nav-link">Question</Link>
+          </li>
         </ul>
       </div>
     </nav>

@@ -11,6 +11,7 @@ import Event from './components/Events/Event'
 import TodoApp from './components/Redux-components/TodoApp';
 import ReduxHooks from "./components/Examples/ReduxHooks";
 import ReduxC from "./components/Examples/Other";
+import Question from "./components/Questions/Questions"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/redux" component={TodoApp} />
           <Route path="/reduxhooks" component={ReduxHooks} />
           <Route path="/redux2" component={ReduxC} />
+          <Route path="/questions" component={Question} />
         </Switch>
       </Router>
     </div>

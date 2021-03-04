@@ -24,3 +24,11 @@ const GCH = ({ name }) => {
         </div>
     )
 }
+
+// Component 1  <- useContext.Provider props 
+
+// Component 2 
+
+// Componet 3 
+
+// Componet 4  -> useContext.Consumer props we will see props

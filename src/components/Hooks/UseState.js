@@ -110,10 +110,17 @@ const reducer = (state, action) => {
 
 export const Counter = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const [count, setCount ] = useState(0);
+
+  const clickPlus = () => {
+    dispatch({type: 'decrement'})
+    setCount(count + 1);
+  }
   return (
     <>
       Count: {state.count}
-      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={clickPlus}>-</button>
       <button onClick={() => dispatch({type: 'increment'})}>+</button>
     </>
   );

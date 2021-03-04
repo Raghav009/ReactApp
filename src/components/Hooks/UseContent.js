@@ -13,12 +13,15 @@ const UserContext = createContext();
 */
 
 const Context = () => {
-    const [user] = useState({ name: "Fred" });
+    const [user, setUser] = useState({ name: "Fred" });
 
     return (
-        <UserContext.Provider value={user}>
-            <Main />
-        </UserContext.Provider>
+        <div>
+            <button onClick={() => setUser({ name: "John" })}>Click</button>
+            <UserContext.Provider value={user}>
+                <Main />
+            </UserContext.Provider>
+        </div>
     );
 };
 const Main = () => {
@@ -42,8 +45,9 @@ const Header = () => {
         <h1>
             Welcome,
             <UserContext.Consumer>
-                { user => (<div>{user.name} From Consumer</div> )}
+                {user => (<div>{user.name} From Consumer</div>)}
             </UserContext.Consumer>
+
             {user.name}!
         </h1>
     );
