@@ -1,3 +1,4 @@
+import React , {useState} from 'react';
 
 const P = () => {
     const name = 'Ram';
@@ -24,6 +25,21 @@ const GCH = ({ name }) => {
         </div>
     )
 }
+
+const inputHook = (init) =>{
+
+    const [value, setValue] = useState(init);
+
+    const change = (e) => {
+        setValue(e.targe.value);
+    }
+
+    return [value, change];
+}
+
+// const [textinp, setTextinp] = inputHook('Init');
+
+// <input type=text value=textinp onChange={(e) => setTextinp(e)} />
 
 // Component 1  <- useContext.Provider props 
 

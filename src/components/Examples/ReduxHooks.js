@@ -3,7 +3,8 @@ import { Provider, useSelector, useDispatch } from "react-redux";
 
 // Initial State 
 const initialState = {
-    counter: 0
+    counter: 0,
+    name : ''
 };
 
 // Add Root Reducer

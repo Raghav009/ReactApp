@@ -49,7 +49,7 @@ const UseState = () => {
         }
         return e;
       }) // .filter(e => e.storage === 500)
-      
+
       setObj({
         ...Obj,
         cores: modifed, // Extising values + new Data 
@@ -57,7 +57,7 @@ const UseState = () => {
       })
     }, 1000);
 
-    
+
   }
 
   const displayArr = () => {
@@ -95,14 +95,14 @@ const UseState = () => {
   )
 }
 
-const initialState = {count: 0};
+const initialState = { count: 0 };
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'increment':
-      return {count: state.count + 1};
+      return { count: state.count + action.next };
     case 'decrement':
-      return {count: state.count - 1};
+      return { count: state.count - 1 };
     default:
       throw new Error();
   }
@@ -111,17 +111,17 @@ const reducer = (state, action) => {
 export const Counter = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [count, setCount ] = useState(0);
+  const [count, setCount] = useState(0);
 
   const clickPlus = () => {
-    dispatch({type: 'decrement'})
+    dispatch({ type: 'decrement' })
     setCount(count + 1);
   }
   return (
     <>
       Count: {state.count}
       <button onClick={clickPlus}>-</button>
-      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+      <button onClick={() => dispatch({ type: 'increment', next: 5 })}>+</button>
     </>
   );
 }
