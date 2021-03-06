@@ -1,5 +1,7 @@
 import React, { useReducer } from 'react'
 import RexComp from './Redux';
+import Learning from '../learning/L1'
+
 const Event2 = () => {
 
     const Reduce = () => {
@@ -19,10 +21,10 @@ const Event2 = () => {
 
         dispatch();
 
-        dispatch({
-            type: 'Update',
-            value: 'Shayam' // payload
-        })
+        // dispatch({
+        //     type: 'Update',
+        //     value: 'Shayam' // payload
+        // })
     }
 
     const reducer = (accumulator, currentValue) => {
@@ -37,6 +39,7 @@ const Event2 = () => {
             {Name.value}
             Events 2 Component <span><button onClick={Reduce}>Click</button></span>
             <RexComp />
+            <Learning />
         </div>
     )
 }
