@@ -15,7 +15,7 @@ const MultiRoute = ({ routes }) => {
                             return <Route key={i} exact path={e.path} component={e.component}/>
                         })
                     } */}
-                <Route path={`${path}/Comp1`} component={Comp1} />
+                <Route path={`/multi/Comp1`} component={Comp1} />
                 <Route path={`${path}/Comp2`} component={Comp2} />
             </Switch>
 

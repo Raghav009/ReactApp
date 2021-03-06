@@ -38,7 +38,9 @@ const rootReducer = combineReducers({
     name: nameReduces
 });
 
-const store = createStore(rootReducer);
+const Debug = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+const store = createStore(rootReducer, Debug);
 
 const ReduxC = () => {
 
@@ -57,6 +59,9 @@ export default ReduxC;
 
 const ListC = () => {
     const allActivities = useSelector((state) => state.activities)
+
+    const names = useSelector(state => state.name);
+
     const [add, setAdd] = useState(false);
     return (
         <div className="row">
@@ -66,6 +71,15 @@ const ListC = () => {
             {allActivities.map(activity => {
                 return <Delete key={activity.id} id={activity.id} author={activity.author} title={activity.title} />
             })}
+
+            <div>
+                List of Names 
+                {
+                    names.map((e,i)=> {
+                        return <span key={i}> {e.Name} </span>
+                    })
+                }
+            </div>
         </div>
     )
 }

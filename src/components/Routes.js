@@ -57,9 +57,9 @@ const Routes = [
     //   ]
     // },
     {
-      path: '/events2',
+      path: '/events2/:js',
       component: Event2
-    },
+    }
   ]
 
   export default Routes;

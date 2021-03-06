@@ -1,9 +1,10 @@
 import React, { useReducer } from 'react'
 import RexComp from './Redux';
 import Learning from '../learning/L1'
+import {useParams} from 'react-router-dom';
 
 const Event2 = () => {
-
+    const { js } = useParams();
     const Reduce = () => {
         let list = [1, 2, 3, 4, 5];
 
@@ -36,7 +37,7 @@ const Event2 = () => {
 
     return (
         <div>
-            {Name.value}
+            {Name.value} - Js : {js}
             Events 2 Component <span><button onClick={Reduce}>Click</button></span>
             <RexComp />
             <Learning />

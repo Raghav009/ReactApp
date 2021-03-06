@@ -30,17 +30,17 @@ List.push(6)
 
 List = [7,8,9]
 
-Immutable - update values immutably, make copies of existing objects/arrays, 
+Immutable - new object = make copies of existing objects/arrays, 
 and then modify the copies
 
 const Person_new = { ...Person, Name:'Cena', Age:22 }
 
 const List_new = [ ...List, 7,8,9 ]
 
-Redux - expects that all state updates are done immutably
+Redux :- expects that all state updates are done immutably
 
-Store - Object Which store the Data in the React App and its ReadOnly - 
-Any given piece of data should only exist in one location
+Store - {Object} Which store the Data in the React App and its {ReadOnly} - 
+Any given piece of data should only exist in {one location}
 
 const init = {
     name : ''
