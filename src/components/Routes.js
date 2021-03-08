@@ -8,6 +8,8 @@ import ReduxC from "./Examples/Other";
 import Question from "./Questions/Questions";
 import MultiRoute, { Comp1, Comp2 } from "./Questions/MultiRoute";
 import Event2 from "./Events/Event2";
+import Go from './Go/Example1';
+import ExM from './Examples/Prop';
 
 const Routes = [
     {
@@ -59,6 +61,14 @@ const Routes = [
     {
       path: '/events2/:js',
       component: Event2
+    },
+    {
+      path:'/Go',
+      component : Go
+    },
+    {
+      path : '/Ex1',
+      component: ExM
     }
   ]
 

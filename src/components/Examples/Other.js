@@ -73,9 +73,9 @@ const ListC = () => {
             })}
 
             <div>
-                List of Names 
+                List of Names
                 {
-                    names.map((e,i)=> {
+                    names.map((e, i) => {
                         return <span key={i}> {e.Name} </span>
                     })
                 }
