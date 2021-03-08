@@ -27,8 +27,8 @@ const Ex1 = ({ name, age }) => {
         let sales = 0, income = 0;
 
         for (let result of data.results) {
-            sales += sales + result.sales;
-            income += income + result.income;
+            sales = sales + result.sales;
+            income = income + result.income;
         }
 
         income = new Intl.NumberFormat("en-US", {
